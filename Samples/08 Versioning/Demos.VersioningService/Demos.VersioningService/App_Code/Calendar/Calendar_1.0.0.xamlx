@@ -1,0 +1,238 @@
+﻿<WorkflowService mc:Ignorable="sap sap2010 sads" p1:TextExpression.Namespaces="{x:Reference __ReferenceID2}" p1:TextExpression.References="{x:Reference __ReferenceID3}" ConfigurationName="Calendar" DefinitionIdentity="Calendar; Version=1.0.0" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="WorkflowService_1" Name="Calendar"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel"
+ xmlns:dva="clr-namespace:Demos.VersioningService.Activities;assembly=Demos.VersioningService"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities"
+ xmlns:p="http://tempuri.org/"
+ xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:ssx="clr-namespace:System.ServiceModel.XamlIntegration;assembly=System.ServiceModel"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <p1:Sequence DisplayName="Root" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <p1:TextExpression.Namespaces>
+      <sco:Collection x:TypeArguments="x:String" x:Name="__ReferenceID2">
+        <x:String>System</x:String>
+        <x:String>System.Collections.Generic</x:String>
+        <x:String>System.Data</x:String>
+        <x:String>System.Linq</x:String>
+        <x:String>System.Text</x:String>
+        <x:String>System.ServiceModel.Activities</x:String>
+      </sco:Collection>
+    </p1:TextExpression.Namespaces>
+    <p1:TextExpression.References>
+      <sco:Collection x:TypeArguments="p1:AssemblyReference" x:Name="__ReferenceID3">
+        <p1:AssemblyReference>Microsoft.CSharp</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Web.DynamicData</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Drawing</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Web.Entity</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Web.ApplicationServices</p1:AssemblyReference>
+        <p1:AssemblyReference>System</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Activities</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Core</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Data</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Data.Entity</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Runtime.Serialization</p1:AssemblyReference>
+        <p1:AssemblyReference>System.ServiceModel</p1:AssemblyReference>
+        <p1:AssemblyReference>System.ServiceModel.Activities</p1:AssemblyReference>
+        <p1:AssemblyReference>System.ServiceModel.Channels</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Web</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Xaml</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Xml</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Xml.Linq</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Runtime.DurableInstancing</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Configuration</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Activities.DurableInstancing</p1:AssemblyReference>
+        <p1:AssemblyReference>mscorlib</p1:AssemblyReference>
+        <p1:AssemblyReference>Demos.VersioningService</p1:AssemblyReference>
+      </sco:Collection>
+    </p1:TextExpression.References>
+    <p1:Sequence.Variables>
+      <p1:Variable x:TypeArguments="CorrelationHandle" Name="_handle" />
+      <p1:Variable x:TypeArguments="s:DateTime" Name="EventDate" />
+      <p1:Variable x:TypeArguments="x:String" Name="CustomerName" />
+      <p1:Variable x:TypeArguments="s:Guid" Name="EventId" />
+    </p1:Sequence.Variables>
+    <CorrelationScope sap2010:WorkflowViewState.IdRef="CorrelationScope_2">
+      <CorrelationScope.Body>
+        <p1:Sequence sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <p1:Sequence.Variables>
+            <p1:Variable x:TypeArguments="x:Boolean" Name="IsAccepted" />
+          </p1:Sequence.Variables>
+          <p1:Sequence DisplayName="AddEvent" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Receive x:Name="__ReferenceID0" CanCreateInstance="True" sap2010:WorkflowViewState.IdRef="Receive_5" OperationName="AddEvent" ServiceContractName="p:IService">
+              <ReceiveParametersContent>
+                <p1:OutArgument x:TypeArguments="s:DateTime" x:Key="date">
+                  <mca:CSharpReference x:TypeArguments="s:DateTime">EventDate</mca:CSharpReference>
+                </p1:OutArgument>
+                <p1:OutArgument x:TypeArguments="x:String" x:Key="customerName">
+                  <mca:CSharpReference x:TypeArguments="x:String">CustomerName</mca:CSharpReference>
+                </p1:OutArgument>
+              </ReceiveParametersContent>
+            </Receive>
+            <p1:Assign sap2010:WorkflowViewState.IdRef="Assign_2">
+              <p1:Assign.To>
+                <p1:OutArgument x:TypeArguments="s:Guid">
+                  <mca:CSharpReference x:TypeArguments="s:Guid">EventId</mca:CSharpReference>
+                </p1:OutArgument>
+              </p1:Assign.To>
+              <p1:Assign.Value>
+                <p1:InArgument x:TypeArguments="s:Guid">
+                  <mca:CSharpValue x:TypeArguments="s:Guid">Guid.NewGuid()</mca:CSharpValue>
+                </p1:InArgument>
+              </p1:Assign.Value>
+            </p1:Assign>
+            <dva:UpdateIdParticipant sap2010:WorkflowViewState.IdRef="UpdateIdParticipant_1">
+              <dva:UpdateIdParticipant.Id>
+                <p1:InArgument x:TypeArguments="s:Guid">
+                  <mca:CSharpValue x:TypeArguments="s:Guid">EventId</mca:CSharpValue>
+                </p1:InArgument>
+              </dva:UpdateIdParticipant.Id>
+            </dva:UpdateIdParticipant>
+            <SendReply Request="{x:Reference __ReferenceID0}" DisplayName="SendReplyToReceive" sap2010:WorkflowViewState.IdRef="SendReply_5">
+              <SendReply.CorrelationInitializers>
+                <QueryCorrelationInitializer>
+                  <QueryCorrelationInitializer.CorrelationHandle>
+                    <p1:InArgument x:TypeArguments="CorrelationHandle">
+                      <mca:CSharpValue x:TypeArguments="CorrelationHandle">_handle</mca:CSharpValue>
+                    </p1:InArgument>
+                  </QueryCorrelationInitializer.CorrelationHandle>
+                  <XPathMessageQuery x:Key="key1">
+                    <XPathMessageQuery.Namespaces>
+                      <ssx:XPathMessageContextMarkup>
+                        <x:String x:Key="xgSc">http://tempuri.org/</x:String>
+                      </ssx:XPathMessageContextMarkup>
+                    </XPathMessageQuery.Namespaces>sm:body()/xgSc:AddEventResponse/xgSc:EventId</XPathMessageQuery>
+                </QueryCorrelationInitializer>
+              </SendReply.CorrelationInitializers>
+              <SendParametersContent>
+                <p1:InArgument x:TypeArguments="s:Guid" x:Key="EventId">
+                  <mca:CSharpValue x:TypeArguments="s:Guid">EventId</mca:CSharpValue>
+                </p1:InArgument>
+              </SendParametersContent>
+            </SendReply>
+          </p1:Sequence>
+          <p1:Sequence DisplayName="AcceptEvent" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <Receive x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="Receive_6" OperationName="AcceptEvent" ServiceContractName="p:IService">
+              <Receive.CorrelatesOn>
+                <XPathMessageQuery x:Key="key1">
+                  <XPathMessageQuery.Namespaces>
+                    <ssx:XPathMessageContextMarkup>
+                      <x:String x:Key="xgSc">http://tempuri.org/</x:String>
+                    </ssx:XPathMessageContextMarkup>
+                  </XPathMessageQuery.Namespaces>sm:body()/xgSc:AcceptEvent/xgSc:id</XPathMessageQuery>
+              </Receive.CorrelatesOn>
+              <ReceiveParametersContent>
+                <p1:OutArgument x:TypeArguments="s:Guid" x:Key="id" />
+                <p1:OutArgument x:TypeArguments="x:Boolean" x:Key="accept">
+                  <mca:CSharpReference x:TypeArguments="x:Boolean">IsAccepted</mca:CSharpReference>
+                </p1:OutArgument>
+              </ReceiveParametersContent>
+            </Receive>
+          </p1:Sequence>
+          <p1:If sap2010:WorkflowViewState.IdRef="If_1">
+            <p1:If.Condition>
+              <p1:InArgument x:TypeArguments="x:Boolean">
+                <mca:CSharpValue x:TypeArguments="x:Boolean">IsAccepted</mca:CSharpValue>
+              </p1:InArgument>
+            </p1:If.Condition>
+            <p1:If.Then>
+              <p1:Sequence sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <p1:WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="Envoi d'un mail de validation" />
+                <SendReply Request="{x:Reference __ReferenceID1}" DisplayName="SendReplyToReceive" sap2010:WorkflowViewState.IdRef="SendReply_7">
+                  <SendMessageContent DeclaredMessageType="x:String">
+                    <p1:InArgument x:TypeArguments="x:String">
+                      <mca:CSharpValue x:TypeArguments="x:String">"RDV de " + CustomerName + " accèpté à " + EventDate</mca:CSharpValue>
+                    </p1:InArgument>
+                  </SendMessageContent>
+                </SendReply>
+              </p1:Sequence>
+            </p1:If.Then>
+            <p1:If.Else>
+              <p1:Sequence sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <p1:WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="Send rejected mail" />
+                <SendReply Request="{x:Reference __ReferenceID1}" DisplayName="SendReplyToReceive" sap2010:WorkflowViewState.IdRef="SendReply_8">
+                  <SendMessageContent DeclaredMessageType="x:String">
+                    <p1:InArgument x:TypeArguments="x:String">
+                      <mca:CSharpValue x:TypeArguments="x:String">"RDV de " + CustomerName + " accepté"</mca:CSharpValue>
+                    </p1:InArgument>
+                  </SendMessageContent>
+                </SendReply>
+              </p1:Sequence>
+            </p1:If.Else>
+          </p1:If>
+        </p1:Sequence>
+      </CorrelationScope.Body>
+      <CorrelationScope.CorrelatesWith>
+        <p1:InArgument x:TypeArguments="CorrelationHandle">
+          <mca:CSharpValue x:TypeArguments="CorrelationHandle">_handle</mca:CSharpValue>
+        </p1:InArgument>
+      </CorrelationScope.CorrelatesWith>
+    </CorrelationScope>
+    <sads:DebugSymbol.Symbol>d3xEOlxQcm9qZWN0c1xKZXJlbXlKZWFuc29uXERlbW9zXFdGNC41XERlbW9zLlZlcnNpb25pbmdTZXJ2aWNlXERlbW9zLlZlcnNpb25pbmdTZXJ2aWNlXEFwcF9Db2RlXENhbGVuZGFyXENhbGVuZGFyXzEuMC4wLnhhbWx4HxADsQERAQE8Ba8BGAECrAELrAFZAQM+CagBFwEIQgt2GQEsdwuIARkBJIkBC6cBEwEJQw1MFwFOTQ1YGQFBWQ1fJwE6YA11GQEteA2HARcBJYwBEYwBWgEKkAEPmQEdARqcAQ+lAR0BEEkTSWUBVUYTRmQBT1UTVV0BSFATUF4BQlwTXFYBO3ITclYBNGUXZWUBLoQBE4QBZAEmkQERkQF0ASKSARGYAR0BG50BEZ0BaQEYngERpAEdARGRAVKRAXEBI5UBF5UBiQEBHJ0BUp0BZgEZoQEXoQF6ARI=</sads:DebugSymbol.Symbol>
+  </p1:Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Receive_5" sap:VirtualizedContainerService.HintSize="255,90" />
+      <sap2010:ViewStateData Id="Assign_2" sap:VirtualizedContainerService.HintSize="255,62" />
+      <sap2010:ViewStateData Id="UpdateIdParticipant_1" sap:VirtualizedContainerService.HintSize="255,22" />
+      <sap2010:ViewStateData Id="SendReply_5" sap:VirtualizedContainerService.HintSize="255,90" />
+      <sap2010:ViewStateData Id="Sequence_7" sap:VirtualizedContainerService.HintSize="579,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Receive_6" sap:VirtualizedContainerService.HintSize="255,90" />
+      <sap2010:ViewStateData Id="Sequence_8" sap:VirtualizedContainerService.HintSize="579,214">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WriteLine_1" sap:VirtualizedContainerService.HintSize="255,62" />
+      <sap2010:ViewStateData Id="SendReply_7" sap:VirtualizedContainerService.HintSize="255,90" />
+      <sap2010:ViewStateData Id="Sequence_9" sap:VirtualizedContainerService.HintSize="277,316">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WriteLine_2" sap:VirtualizedContainerService.HintSize="255,62" />
+      <sap2010:ViewStateData Id="SendReply_8" sap:VirtualizedContainerService.HintSize="255,90" />
+      <sap2010:ViewStateData Id="Sequence_10" sap:VirtualizedContainerService.HintSize="277,316">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="579,466" />
+      <sap2010:ViewStateData Id="Sequence_6" sap:VirtualizedContainerService.HintSize="601,935">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CorrelationScope_2" sap:VirtualizedContainerService.HintSize="637,1074" />
+      <sap2010:ViewStateData Id="Sequence_5" sap:VirtualizedContainerService.HintSize="659,1198">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WorkflowService_1" sap:VirtualizedContainerService.HintSize="689,1268" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</WorkflowService>

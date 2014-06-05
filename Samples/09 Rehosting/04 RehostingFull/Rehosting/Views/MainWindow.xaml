@@ -1,0 +1,139 @@
+﻿<RibbonWindow x:Class="Rehosting.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:validation="clr-namespace:System.Activities.Presentation.Validation;assembly=System.Activities.Presentation"
+        xmlns:properties="clr-namespace:Rehosting.Properties"
+        xmlns:vm="clr-namespace:Rehosting.ViewModels"
+        mc:Ignorable="d"
+        xmlns:wf="clr-namespace:RehostingLib;assembly=RehostingLib"
+        d:DataContext="{d:DesignInstance Type=wf:DesignerViewModel,IsDesignTimeCreatable=True}"
+        Height="700" Width="1000" WindowStartupLocation="CenterScreen"
+        Icon="/Images/app.ico"
+        Title="{Binding Path=FileName,StringFormat=FlowPad \{0\}}">
+    <RibbonWindow.Resources>
+        <vm:ApplicationViewModel x:Key="ApplicationViewModel"/>
+        
+        <Style TargetType="GridSplitter" x:Key="HorizontalSplitterStyle">
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="5"/>
+        </Style>
+        <Style TargetType="GridSplitter" x:Key="VerticalSplitterStyle">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Height" Value="5"/>
+        </Style>
+        
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+
+        <Style TargetType="ListView">
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+    </RibbonWindow.Resources>
+    <DockPanel>
+        <Ribbon DockPanel.Dock="Top">
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu SmallImageSource="/Images/menu.png" Label="Menu">
+                    <RibbonApplicationMenuItem DataContext="{Binding Source={StaticResource ApplicationViewModel},Path=ExitCommand}" ImageSource="/Images/exit.png" />
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+
+            <RibbonTab Header="{x:Static properties:Resources.HomeTab}">
+                <RibbonGroup Header="{x:Static properties:Resources.EditionGroup}">
+                    <RibbonButton DataContext="{Binding Path=NewActivityCommand}" LargeImageSource="/images/new.png" />
+                    <RibbonButton DataContext="{Binding Path=NewServiceCommand}" LargeImageSource="/images/new.png" />
+                    <RibbonButton DataContext="{Binding Path=OpenCommand}" LargeImageSource="/images/open.png" />
+                    <RibbonButton DataContext="{Binding Path=SaveCommand}" LargeImageSource="/images/save.png"/>
+                    <RibbonButton DataContext="{Binding Path=SaveAsCommand}" LargeImageSource="/images/saveas.png"/>
+                </RibbonGroup>
+                <RibbonGroup>
+                    <RibbonSplitButton Command="{Binding Path=ExecuteCommand}" Label="{Binding Path=ExecuteCommand.Text}" LargeImageSource="/images/execute.png">
+                        <RibbonSplitButton.Items>
+                            <RibbonMenuItem DataContext="{Binding Path=ExecuteSlowCommand}" ImageSource="/images/execute.png" />
+                        </RibbonSplitButton.Items>
+                    </RibbonSplitButton>
+                    <RibbonButton DataContext="{Binding Path=StopCommand}" LargeImageSource="/images/stop.png"/>
+                </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
+        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="150"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
+
+        <ContentPresenter Content="{Binding Path=ToolBoxView}" Grid.RowSpan="3" />
+        <ContentPresenter Content="{Binding Path=DesignerView}" Grid.Column="2" />
+            <TabControl Grid.Column="4" HorizontalAlignment="Stretch" Grid.RowSpan="3"  TabStripPlacement="Bottom">
+                <TabItem Header="{x:Static properties:Resources.PropertiesToolbox}">
+                <ContentPresenter Content="{Binding Path=PropertyView}"  />
+            </TabItem>
+            <TabItem Header="{x:Static properties:Resources.OutlineToolbox}">
+                <ContentPresenter Content="{Binding Path=OutlineView}"  />
+            </TabItem>
+
+        </TabControl>
+
+            <TabControl Grid.Column="2" Grid.Row="2" TabStripPlacement="Bottom">
+                <TabItem Header="{x:Static properties:Resources.ErrorsToolbox}">
+                    <ListView ItemsSource="{Binding Path=Errors.Errors}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate DataType="{x:Type validation:ValidationErrorInfo}">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Path=Id}" FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding Path=PropertyName}" FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding Path=Message}" Margin="5,0"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </TabItem>
+                <TabItem Header="{x:Static properties:Resources.TrackingToolbox}">
+                    <ListView ItemsSource="{Binding Path=Tracking.Tracks}" Margin="0,4,0,-4">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </TabItem>
+                <TabItem Header="{x:Static properties:Resources.OutputToolbox}">
+                    <ListView ItemsSource="{Binding Path=Output.Items}" Margin="0,4,0,-4">
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem DataContext="{Binding Path=Output.ClearCommand}" />
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </TabItem>
+            </TabControl>
+            
+
+
+        <GridSplitter Style="{StaticResource HorizontalSplitterStyle}" Grid.Column="1" Grid.RowSpan="3"/>
+            <GridSplitter Style="{StaticResource HorizontalSplitterStyle}" Grid.Column="3" Grid.RowSpan="3"/>
+            <GridSplitter Style="{StaticResource VerticalSplitterStyle}" Grid.Column="2" Grid.Row="1"/>
+        </Grid>
+    </DockPanel>
+</RibbonWindow>

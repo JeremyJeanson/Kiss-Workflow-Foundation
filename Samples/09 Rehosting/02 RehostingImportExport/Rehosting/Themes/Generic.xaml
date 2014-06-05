@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="{x:Type RibbonButton}">
+        <Setter Property="Command" Value="{Binding}"/>
+        <Setter Property="Label" Value="{Binding Text}"/>
+    </Style>
+</ResourceDictionary>

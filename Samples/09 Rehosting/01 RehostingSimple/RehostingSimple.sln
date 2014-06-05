@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RehostingSimple", "RehostingSimple\RehostingSimple.csproj", "{3322DE1C-557E-40C9-9011-E49A419766A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{ED858A85-30E9-42DD-9E2C-62E54FB21780}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLib", "MvvmLib\MvvmLib.csproj", "{C35AD285-EE05-475A-8EA1-AB3B32AB4D6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RehostingLib", "RehostingLib\RehostingLib.csproj", "{6A16B9E2-5972-4C6A-BA00-14963A102E74}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://81.255.200.61:8080/tfs/quadra
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = RehostingSimple\\RehostingSimple.csproj
+		SccProjectName1 = RehostingSimple
+		SccLocalPath1 = RehostingSimple
+		SccProjectUniqueName2 = RehostingLib\\RehostingLib.csproj
+		SccProjectTopLevelParentUniqueName2 = RehostingSimple.sln
+		SccProjectName2 = RehostingLib
+		SccLocalPath2 = RehostingLib
+		SccProjectUniqueName3 = MvvmLib\\MvvmLib.csproj
+		SccProjectTopLevelParentUniqueName3 = RehostingSimple.sln
+		SccProjectName3 = MvvmLib
+		SccLocalPath3 = MvvmLib
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3322DE1C-557E-40C9-9011-E49A419766A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3322DE1C-557E-40C9-9011-E49A419766A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3322DE1C-557E-40C9-9011-E49A419766A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3322DE1C-557E-40C9-9011-E49A419766A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C35AD285-EE05-475A-8EA1-AB3B32AB4D6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C35AD285-EE05-475A-8EA1-AB3B32AB4D6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C35AD285-EE05-475A-8EA1-AB3B32AB4D6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C35AD285-EE05-475A-8EA1-AB3B32AB4D6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A16B9E2-5972-4C6A-BA00-14963A102E74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A16B9E2-5972-4C6A-BA00-14963A102E74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A16B9E2-5972-4C6A-BA00-14963A102E74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A16B9E2-5972-4C6A-BA00-14963A102E74}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C35AD285-EE05-475A-8EA1-AB3B32AB4D6F} = {ED858A85-30E9-42DD-9E2C-62E54FB21780}
+		{6A16B9E2-5972-4C6A-BA00-14963A102E74} = {ED858A85-30E9-42DD-9E2C-62E54FB21780}
+	EndGlobalSection
+EndGlobal
