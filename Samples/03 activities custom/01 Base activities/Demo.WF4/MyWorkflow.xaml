@@ -1,0 +1,130 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Demo.WF4.MyWorkflow"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:m="clr-namespace:MyActivities;assembly=MyActivities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Argument1" Type="InArgument(x:Object)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>Demo.WF4.MyWorkflow_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>MyActivities</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities.Debugger</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.ServiceModel.Activities</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Demo.WF4</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>MyActivities</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>Demo.WF4</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <m:ActivityWithArgument sap2010:Annotation.AnnotationText="Mon commentaire&#xA;" sap2010:WorkflowViewState.IdRef="ActivityWithArgument_1" MyArgument="a" />
+    <m:ActivityWithActivities sap2010:WorkflowViewState.IdRef="ActivityWithActivities_1">
+      <m:ActivityWithActivities.Activities>
+        <sco:Collection x:TypeArguments="Activity" sap2010:WorkflowViewState.IdRef="Collection`1_1">
+          <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_1" />
+          <Delay Duration="00:00:01" sap2010:WorkflowViewState.IdRef="Delay_1" />
+        </sco:Collection>
+      </m:ActivityWithActivities.Activities>
+    </m:ActivityWithActivities>
+    <m:ActivityWithArgument MyArgument="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityWithArgument_2" />
+    <m:ActivityWithActivities sap2010:WorkflowViewState.IdRef="ActivityWithActivities_2">
+      <m:ActivityWithActivities.Activities>
+        <sco:Collection x:TypeArguments="Activity" sap2010:WorkflowViewState.IdRef="Collection`1_2">
+          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <m:ActivityWithArgument MyArgument="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityWithArgument_3" />
+            <m:ActivityWithActivity Body="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityWithActivity_1" />
+          </Sequence>
+        </sco:Collection>
+      </m:ActivityWithActivities.Activities>
+    </m:ActivityWithActivities>
+    <m:ActivityWithActivities sap2010:WorkflowViewState.IdRef="ActivityWithActivities_4">
+      <m:ActivityWithActivities.Activities>
+        <m:ActivityWithActivities sap2010:WorkflowViewState.IdRef="ActivityWithActivities_3">
+          <m:ActivityWithActivities.Activities>
+            <sco:Collection x:TypeArguments="Activity" />
+          </m:ActivityWithActivities.Activities>
+        </m:ActivityWithActivities>
+      </m:ActivityWithActivities.Activities>
+    </m:ActivityWithActivities>
+    <m:ActivityWithActivity Body="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityWithActivity_2" />
+    <sads:DebugSymbol.Symbol>d1NEOlxQcm9qZWN0c1xKZXJlbXlKZWFuc29uXERlbW9zXFdGNC41XDAzIGFjdGl2aXRpZXMgY3VzdG9tXERlbW8uV0Y0XE15V29ya2Zsb3cueGFtbA87A1sOAgEBPAU8oAECAQ49BUQgAgEKRQVFbgIBCUYFTyACAQVQBVggAgEDWQVZaAIBAjyaATydAQIBD0ALQEYCAQ1BC0FSAgELSQtMFgIBBlIJViQCAQRBG0ElAgEMSg1KdgIBCEsNS3ACAQc=</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="ActivityWithArgument_1" sap:VirtualizedContainerService.HintSize="260,101">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WriteLine_1" sap:VirtualizedContainerService.HintSize="211,61" />
+      <sap2010:ViewStateData Id="Delay_1" sap:VirtualizedContainerService.HintSize="211,22" />
+      <sap2010:ViewStateData Id="Collection`1_1" sap:VirtualizedContainerService.HintSize="261,55" />
+      <sap2010:ViewStateData Id="ActivityWithActivities_1" sap:VirtualizedContainerService.HintSize="260,213" />
+      <sap2010:ViewStateData Id="ActivityWithArgument_2" sap:VirtualizedContainerService.HintSize="260,61" />
+      <sap2010:ViewStateData Id="ActivityWithArgument_3" sap:VirtualizedContainerService.HintSize="200,61" />
+      <sap2010:ViewStateData Id="ActivityWithActivity_1" sap:VirtualizedContainerService.HintSize="200,88" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="234,325">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Collection`1_2" sap:VirtualizedContainerService.HintSize="261,55" />
+      <sap2010:ViewStateData Id="ActivityWithActivities_2" sap:VirtualizedContainerService.HintSize="260,436" />
+      <sap2010:ViewStateData Id="ActivityWithActivities_3" sap:VirtualizedContainerService.HintSize="200,107" />
+      <sap2010:ViewStateData Id="ActivityWithActivities_4" sap:VirtualizedContainerService.HintSize="260,218" />
+      <sap2010:ViewStateData Id="ActivityWithActivity_2" sap:VirtualizedContainerService.HintSize="260,88" />
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="282,1441">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Demo.WF4.MyWorkflow_1" sap:VirtualizedContainerService.HintSize="322,1521" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
