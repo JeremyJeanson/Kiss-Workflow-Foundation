@@ -1,4 +1,4 @@
-<h1>Kiss WorkFlow Foundation</h1>
+<img src="https://github.com/JeremyJeanson/KissWorkflowFoundation/blob/master/kiss_workflow_foundation_banner.png?raw=true" alt="Kiss WorkFlow Foundation">
 <h2>About this project</h2>
 <p>This project was born from the idea that everyone should be able to use Workflow Foundation in best conditions.<br /> It contain sample to take Workflow Foundation jump start!<br /> <br /> <em><strong>Note:</strong> This project is at the first step "Share code samples". I hope to share soon more content (articles, best practice and more...)</em><br /> </p>
 <p>&nbsp;</p>
