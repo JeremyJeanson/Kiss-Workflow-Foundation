@@ -1,10 +1,10 @@
-
 ![Kiss Workflow Foundation](https://github.com/JeremyJeanson/KissWorkflowFoundation/blob/master/kiss_workflow_foundation_banner.png?raw=true)
 ## About this project
 This project was born from the idea that everyone should be able to use Workflow Foundation in best conditions.
 It contain sample to take Workflow Foundation jump start!
 >This project is at the first step "Share code samples". I hope to share soon more content (articles, best practice and more...)
 
+## Features addressed by this samples
   * Introduction
   * StateMachine/Demos.StateMachine
   * BookMarks
