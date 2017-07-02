@@ -1,8 +1,23 @@
-<img src="https://github.com/JeremyJeanson/KissWorkflowFoundation/blob/master/kiss_workflow_foundation_banner.png?raw=true" alt="Kiss WorkFlow Foundation">
-<h2>About this project</h2>
-<p>This project was born from the idea that everyone should be able to use Workflow Foundation in best conditions.<br /> It contain sample to take Workflow Foundation jump start!<br /> <br /> <em><strong>Note:</strong> This project is at the first step "Share code samples". I hope to share soon more content (articles, best practice and more...)</em><br /> </p>
-<p>&nbsp;</p>
-<h2>Articles (in french)</h2>
+
+![Kiss Workflow Foundation](https://github.com/JeremyJeanson/KissWorkflowFoundation/blob/master/kiss_workflow_foundation_banner.png?raw=true)
+## About this project
+This project was born from the idea that everyone should be able to use Workflow Foundation in best conditions.
+It contain sample to take Workflow Foundation jump start!
+>This project is at the first step "Share code samples". I hope to share soon more content (articles, best practice and more...)
+
+  * Introduction
+  * StateMachine/Demos.StateMachine
+  * BookMarks
+  * Custom Activities
+  * Services 
+  * Tracking/Demos.ConsoleTracking
+  * Extensions/Demos.UseExtensions 
+  * Persistance 
+  * Versioning 
+  * Rehosting  
+  * Update/UpdateLive
+
+## Articles (in french)
 <p><a href="http://msdn.microsoft.com/fr-fr/library/dn751566.aspx" target="_blank">Utiliser l'approche Contract First avec Workflow Foundation 4.5</a><br /> MSDN - 30 mai 2014<br /> Cet article pr&eacute;sente l'une de nouveaut&eacute; de Workflow Foundation 4.5, l'approche Contract First.<br /> Vous pourrez y trouver tout le n&eacute;cessaire pour utiliser les contrats WCF avec WF4 (impl&eacute;mentations, astuces, limites&hellip;)</p>
 <p><a href="http://msdn.microsoft.com/fr-fr/vstudio/hh968996">Les fondamentaux du service de workflow</a><br /> MSDN - 30 avril 2012<br /> L'objectif de cet article est d'expliquer pourquoi les services de workflow (WS pour Workflow Services) existent et de clarifier enfin, ces &laquo; petits plus &raquo; qu'apport Windows Workflow Foundation (WF) &agrave; Windows Communication Foundation (WCF). Les architectes et d&eacute;veloppeurs qui utilisent d&eacute;j&agrave; WS le savent bien, l'utilisation de l'expression &laquo; petit plus &raquo; est purement ironique. Nombre de...plus</p>
 <p><a href="http://msdn.microsoft.com/fr-fr/vstudio/hh968987" target="_blank">Les nouveaut&eacute;s de Windows Workflow Foundation 4.5</a><br /> MSDN - 30 avril 2012<br /> Listing clair et document&eacute; des nouveaut&eacute;s de Workflow Foundation 4.5.</p>
