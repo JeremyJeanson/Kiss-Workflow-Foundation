@@ -1,4 +1,4 @@
-![Kiss Workflow Foundation](https://github.com/JeremyJeanson/KissWorkflowFoundation/blob/master/kiss_workflow_foundation_banner.png?raw=true)
+![Kiss Workflow Foundation](kiss_workflow_foundation_banner.png)
 ## About this project
 This project was born from the idea that everyone should be able to use Workflow Foundation in best conditions.
 It contain sample to take Workflow Foundation jump start!
